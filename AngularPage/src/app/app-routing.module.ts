@@ -5,7 +5,7 @@ import { LoginScreenComponent } from './screens/login-screen/login-screen.compon
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '/login', component: LoginScreenComponent }
+  { path: 'login', component: LoginScreenComponent }
 ];
 
 @NgModule({
