@@ -1,0 +1,8 @@
+.menuList li {
+    display: inline;
+}
+
+.menuList {
+    display: flex;
+    justify-content: space-evenly;
+}
