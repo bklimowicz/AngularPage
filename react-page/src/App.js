@@ -7,11 +7,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Router>
+      <Router>
         <Routes>
           <Route path='/' element={<Body />} />
         </Routes>
-      </Router> */}
+      </Router>
     </div>
   );
 }
