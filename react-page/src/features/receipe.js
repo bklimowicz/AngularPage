@@ -1,27 +1,66 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialStateValue = {
-    name: "",
-    age: 0,
-    email: ""
-};
+const initialStateValue = [
+    {
+        key: 0,
+        name: "MyFirstReceipe",
+        ingredients: [{
+            key: 0,
+            name: "Ingredient",
+        }],
+        steps: [{
+            key: 0,
+            header: "header",
+            content: "content",
+        }],
+    },
+    {
+        key: 1,
+        name: "MySecondReceipe",
+        ingredients: [{
+            key: 1,
+            name: "Ingredient",
+        }],
+        steps: [{
+            key: 1,
+            header: "header",
+            content: "content",
+        }],
+    },
+    {
+        key: 2,
+        name: "MyThirdReceipe",
+        ingredients: [{
+            key: 2,
+            name: "Ingredient",
+        }],
+        steps: [{
+            key: 2,
+            header: "header",
+            content: "content",
+        }],
+    }
+];
 
-export const userSlice = createSlice({
-    name: "user",
+export const receipeSlice = createSlice({
+    name: "receipe",
     initialState: {
         value: initialStateValue
     },
     reducers: {
-        login: (state, action) => {
-            state.value = action.payload;
+        addIngredients: (state, action) => {
+            const receipe = state.value.filter((x) => x.key === action.payload.key);
+            receipe.ingredients.push(action.payload.ingredients);
+
+            state.value = {...state.value, receipe};
         },
 
-        logout: (state, action) => {
-            state.value = initialStateValue;
-        },
+        addSteps: (state, action) => {
+            state.value.steps = action.payload.steps;
+        }
     },
 });
 
-export const { login, logout } = userSlice.actions;
+export const { addIngredients, addSteps } = receipeSlice.actions;
 
-export default userSlice.reducer;
+export default receipeSlice.reducer;

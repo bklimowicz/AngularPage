@@ -2,7 +2,7 @@ import React from 'react';
 
 function AddReceipePage() {
   return <div>
-      Add receipe page
+      {/* Add receipe page */}
   </div>;
 }
 
