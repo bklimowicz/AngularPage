@@ -1,0 +1,5 @@
+docker commands:
+  # To run mongo: 
+	docker-compose -p mongo -f mongo.yml up -d
+  # To run MSSQL: 
+	docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=!Samsung4632599!' -p 1433:1433 -v sqlvolume:/var/opt/mssql --name MSSQL mcr.microsoft.com/mssql/server:2019-latest

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  couch:
+    container_name: CouchDB
+    image: couchdb
+    restart: unless-stopped
+    networks:
+      - compose-network
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: admin
+    ports:
+      - 5984:5984
+    volumes:
+      - couchdbvolume:/opt/couchdb/data
+      
+  mssql:
+    container_name: MSSQL
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: unless-stopped
+    networks:
+      - compose-network
+    environment:
+      MSSQL_SA_PASSWORD: "!Samsung4632599!"
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlvolume:/var/opt/mssql
+      
+volumes:
+  couchdbvolume:
+    name: couchdbvolume
+  sqlvolume:
+    name: sqlvolume
+  
+networks:
+  compose-network:
+    driver: bridge
