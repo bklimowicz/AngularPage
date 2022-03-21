@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouchDBConnector", "CouchDB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.Tests", "TestProject1\Libraries.Tests.csproj", "{9B2E3EAB-4276-42A3-8686-969CD0FEFDD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDB", "CosmosDB\CosmosDB.csproj", "{02365DAB-10E7-4893-BD76-E1BFE5803BDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9B2E3EAB-4276-42A3-8686-969CD0FEFDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2E3EAB-4276-42A3-8686-969CD0FEFDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2E3EAB-4276-42A3-8686-969CD0FEFDD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02365DAB-10E7-4893-BD76-E1BFE5803BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02365DAB-10E7-4893-BD76-E1BFE5803BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02365DAB-10E7-4893-BD76-E1BFE5803BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02365DAB-10E7-4893-BD76-E1BFE5803BDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
