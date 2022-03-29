@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Libraries.CosmosDBConnector.Tests
+namespace Libraries.SqlDBConnector.Tests
 {
     public class UnitTest1
     {
