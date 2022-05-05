@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using Libraries.CosmosDBConnector.Factory;
@@ -22,18 +22,18 @@ namespace Libraries.CosmosDBConnector.Tests
 
             result.Count.Should().BeGreaterThan(0);
 
-            result.
+            //result.
         }
 
-        [Fact]
-        public void GetAllKeys_fail()
-        {
-            ICosmosDBServiceFactory cosmosFactory = new CosmosDBServiceFactory();
-            ICosmosDbService service = cosmosFactory.Create();
+        //[Fact]
+        //public void GetAllKeys_fail()
+        //{
+        //    ICosmosDBServiceFactory cosmosFactory = new CosmosDBServiceFactory();
+        //    ICosmosDbService service = cosmosFactory.Create();
 
-            List<MenuButton> result = service.GetItemsAsync().Result.ToList();
+        //    List<MenuButton> result = service.GetItemsAsync().Result.ToList();
 
-            result.Count.Should().Be(0);
-        }
+        //    result.Count.Should().Be(0);
+        //}
     }
 }
