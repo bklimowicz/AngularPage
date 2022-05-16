@@ -9,16 +9,16 @@ namespace Libraries.SignalR.Controllers
     [Route("api/message")]
     public class MessageController : Controller
     {
-        protected readonly IHubContext<MessageHub> _messageHub;
-        public MessageController([NotNull] IHubContext<MessageHub> messageHub)
+        protected readonly IHubContext<GatewayHub> _gatewayHub;
+        public MessageController([NotNull] IHubContext<GatewayHub> messageHub)
         {
-            _messageHub = messageHub;
+            _gatewayHub = messageHub;
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(MessagePost messagePost)
         {
-            await _messageHub.Clients.All.SendAsync("sendToReact", $"The message \"{messagePost.Message}\" has been received.");
+            await _gatewayHub.Clients.All.SendAsync("sendToReact", $"The message \"{messagePost.Message}\" has been received.");
 
             return Ok();
         }

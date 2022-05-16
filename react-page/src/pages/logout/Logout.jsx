@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Logout.module.scss";
-import { logout } from "../../features/userSlice";
+import { logoutUserAction } from "../../features/userSlice";
 import { useDispatch } from "react-redux";
 
 const Logout = () => {
@@ -9,7 +9,7 @@ const Logout = () => {
     const handleLogout = (e) => {
         e.preventDefault();
 
-        dispatch(logout());
+        dispatch(logoutUserAction());
     };
 
     return (

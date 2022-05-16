@@ -33,7 +33,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseCors(MyAllowSpecificOrigins);
 
-app.MapHub<MessageHub>("/message");
+app.MapHub<GatewayHub>("/gateway");
 app.MapControllers();
 
 app.Run();

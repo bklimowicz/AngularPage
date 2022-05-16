@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./Login.module.scss";
-import { login } from "../../features/userSlice";
+import { loginUserAction } from "../../features/userSlice";
 
 const Login = () => {
     const [name, setName] = useState("");
@@ -14,11 +14,10 @@ const Login = () => {
         e.preventDefault();
 
         dispatch(
-            login({
-                name: name,
-                email: email,
-                password: password,
-                loggedIn: true,
+            loginUserAction({
+                name,
+                email,
+                password,
             })
         );
     };
@@ -29,7 +28,6 @@ const Login = () => {
                 className={styles.login__form}
                 onSubmit={(e) => handleSubmit(e)}
             >
-                <h1>Login Here</h1>
                 <input
                     type="name"
                     placeholder="name"

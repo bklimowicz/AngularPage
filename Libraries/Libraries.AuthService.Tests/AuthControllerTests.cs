@@ -2,10 +2,10 @@
 using Libraries.AuthService.Services;
 using FluentAssertions;
 using Xunit;
-using System;
 using System.Linq;
 using Libraries.AuthService.Data;
 using Moq;
+using Libraries.AuthService.Helpers;
 
 namespace Libraries.AuthService.Tests;
 
@@ -17,8 +17,9 @@ public class AuthControllerTests
     public AuthControllerTests()
     {
         var mockUserRepository = new Mock<IUserRepository>();
+        var mockJwtService = new Mock<IJwtService>();
 
-        this._authController = new AuthController(mockUserRepository.Object);
+        this._authController = new AuthController(mockUserRepository.Object, mockJwtService.Object);
     }
 
     [Fact]
