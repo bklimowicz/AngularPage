@@ -1,5 +1,4 @@
-﻿using System;
-using Libraries.AuthService.Models;
+﻿using Libraries.AuthService.Models;
 
 namespace Libraries.AuthService.Data
 {

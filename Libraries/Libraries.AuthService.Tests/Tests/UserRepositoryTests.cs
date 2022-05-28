@@ -1,19 +1,18 @@
-﻿using Libraries.AuthService.Controllers;
-using Libraries.AuthService.Services;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
-using System;
 using System.Linq;
 using Libraries.AuthService.Data;
 using Moq;
 using Libraries.AuthService.Models;
-using System.Collections;
 using System.Collections.Generic;
+using Libraries.AuthService.Tests.Fixtures;
 
 namespace Libraries.AuthService.Tests
 {
-    public class UserRepositoryTests
+    public class UserRepositoryTests : IClassFixture<DatabaseFixture>
     {
+        private readonly DatabaseFixture _fixture;
+
         private readonly IUserRepository _userRepository;
 
         private static IEnumerable<object[]> TestUser()
@@ -22,9 +21,10 @@ namespace Libraries.AuthService.Tests
             {
                 new User()
                 {
-                    Email = "testemail@gmail.com",
-                    Name = "TestUser",
-                    Password = "TestPassword"
+                    Id = 1,
+                    Email = "test@test.com",
+                    Name = "test",
+                    Password = "test"
                 }
             };
 
@@ -36,11 +36,11 @@ namespace Libraries.AuthService.Tests
             return retVal;
         }
 
-        public UserRepositoryTests()
+        public UserRepositoryTests(DatabaseFixture fixture)
         {
-            var mockContext = new Mock<IUserContext>();
-
-            this._userRepository = new UserRepository(mockContext.Object);
+            _fixture = fixture;
+            var context = fixture.CreateContext();
+            this._userRepository = new UserRepository(context);
         }
 
         [Fact]
@@ -56,11 +56,11 @@ namespace Libraries.AuthService.Tests
 
         [Theory]
         [MemberData(nameof(TestUser))]
-        public void GivenUserAddUserToDatabase(User user)
+        public void GivenUserAddsToDatabase(User user)
         {
-            var returnedUser = this._userRepository.Create(user);
+            var result = _userRepository.Create(user);
 
-            returnedUser.Should().NotBeNull();
+            result.Should().Be(user);
         }
     }
 }

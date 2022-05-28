@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries.AuthService", "Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries.AuthService.Tests", "Libraries.AuthService.Tests\Libraries.AuthService.Tests.csproj", "{A6F537E1-591B-4261-BA57-A1842C6882DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{430399DB-8A21-4652-A260-BB0E7460DC1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{A6F537E1-591B-4261-BA57-A1842C6882DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6F537E1-591B-4261-BA57-A1842C6882DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6F537E1-591B-4261-BA57-A1842C6882DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
