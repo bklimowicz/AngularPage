@@ -2,7 +2,7 @@
 using FluentAssertions;
 using Xunit;
 using System.Linq;
-using Libraries.AuthService.Data;
+using Libraries.SqlDBConnector.Data;
 using Moq;
 using Libraries.AuthService.Helpers;
 
@@ -22,7 +22,7 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public void AuthControllerHasIUserRepositoryDependency()
+    public void HasIUserRepositoryDependency()
     {
         var constructor = typeof(AuthController).GetConstructors()[0];
         var parameters = constructor.GetParameters().ToList();
@@ -33,7 +33,7 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public void AuthControllerHasIJwtServiceDependency()
+    public void HasIJwtServiceDependency()
     {
         var constructor = typeof(AuthController).GetConstructors()[0];
         var parameters = constructor.GetParameters().ToList();
@@ -44,7 +44,7 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public void AuthControllerHasOneConstructor()
+    public void HasOneConstructor()
     {
         var constructors = typeof(AuthController).GetConstructors();
 

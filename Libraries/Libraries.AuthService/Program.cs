@@ -1,4 +1,4 @@
-﻿using Libraries.AuthService.Data;
+﻿using Libraries.SqlDBConnector.Data;
 using Libraries.AuthService.Helpers;
 using Microsoft.EntityFrameworkCore;
 

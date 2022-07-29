@@ -26,6 +26,6 @@ namespace Libraries.SignalR.Controllers
     }
     public class MessagePost
     {
-        public virtual string Message { get; set; }
+        public virtual string? Message { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
-using Libraries.AuthService.Data;
+using Libraries.SqlDBConnector.Data;
 using Libraries.AuthService.Dtos;
 using Libraries.AuthService.Helpers;
-using Libraries.AuthService.Models;
+using Libraries.SqlDBConnector.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libraries.AuthService.Controllers
@@ -29,6 +29,9 @@ namespace Libraries.AuthService.Controllers
         [HttpPut]
         public IActionResult Register(RegisterDto dto)
         {
+            if (dto.Email is null) return BadRequest("Missing email information");
+            if (dto.Name is null) return BadRequest("Missing name information.");
+
             User user = new()
             {
                 Email = dto.Email,
@@ -36,7 +39,7 @@ namespace Libraries.AuthService.Controllers
                 Password = BCrypt.Net.BCrypt.HashPassword(dto.Password)
             };
 
-            User createdUser;
+            User? createdUser;
 
             try
             {
@@ -53,7 +56,8 @@ namespace Libraries.AuthService.Controllers
         [HttpPost]
         public IActionResult Login(LoginDto dto)
         {
-            User user = _userRepository.GetByEmail(dto.Email);
+            if (dto.Email is null) return BadRequest("Missing email information");
+            User? user = _userRepository.GetByEmail(dto.Email);
 
             if (user is null)
             {
@@ -79,6 +83,20 @@ namespace Libraries.AuthService.Controllers
             {
                 message = "Success"
             });
+        }
+
+        public new IActionResult User()
+        {
+            var jwt = Request.Cookies["jwt"];
+
+            if (jwt is null) return Unauthorized("Token is missing");
+
+            var token = _jwtService.Verify(jwt);
+            int userId = int.Parse(token.Issuer);
+
+            var user = _userRepository.GetById(userId);
+
+            return Ok(user);
         }
     }
 }

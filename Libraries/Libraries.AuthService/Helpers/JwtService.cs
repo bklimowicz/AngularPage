@@ -6,7 +6,7 @@ namespace Libraries.AuthService.Helpers
 {
     public class JwtService : IJwtService
     {
-        private string SecureKey = "pralinka123tofek-kociaczki";
+        private const string SecureKey = "pralinka123tofek-kociaczki";
 
         public string Generate(int id)
         {
@@ -17,6 +17,21 @@ namespace Libraries.AuthService.Helpers
             var securityToken = new JwtSecurityToken(header, payload);
 
             return new JwtSecurityTokenHandler().WriteToken(securityToken);
+        }
+
+        public JwtSecurityToken Verify(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(SecureKey);
+            tokenHandler.ValidateToken(token, new TokenValidationParameters
+            {
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = false,
+                ValidateAudience = false
+            }, out SecurityToken validatedToken);
+
+            return (JwtSecurityToken)validatedToken;
         }
     }
 }

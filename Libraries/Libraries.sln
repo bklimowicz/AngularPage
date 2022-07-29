@@ -3,19 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.CosmosDBConnector", "Libraries.CosmosDBConnector\Libraries.CosmosDBConnector.csproj", "{B8FDCA94-334D-4421-920C-A61489843A13}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.CouchDBConnector", "Libraries.CouchDBConnector\Libraries.CouchDBConnector.csproj", "{7800A3A7-0D1F-4570-BFD1-FAE2D02D5CCE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.PersistentService", "Libraries.PersistentService\Libraries.PersistentService.csproj", "{1525B3DF-109E-47A6-A075-82B2FBB105EC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.CosmosDBConnector.Tests", "Libraries.CosmosDBConnector.Tests\Libraries.CosmosDBConnector.Tests.csproj", "{311BCF18-7E29-47F6-930F-4D6519135D9D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.SqlDBConnector", "Libraries.SqlDBConnector\Libraries.SqlDBConnector.csproj", "{A7B0DDF3-DFF9-4A2F-84C6-183A3D60EAE2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.SqlDBConnector.Tests", "Libraries.SqlDBConnector.Tests\Libraries.SqlDBConnector.Tests.csproj", "{79FF0C02-71CC-4035-B7EB-584EC23DAB01}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries.CouchDBConnector.Tests", "Libraries.CouchDBConnector.Tests\Libraries.CouchDBConnector.Tests.csproj", "{BA07680C-8313-4653-B8CF-8C2FC9335CCC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries.SignalR", "Libraries.SignalR\Libraries.SignalR.csproj", "{DCC72937-FB9A-4F28-BCFD-8FA2521FE569}"
 EndProject
@@ -23,30 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries.AuthService", "Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries.AuthService.Tests", "Libraries.AuthService.Tests\Libraries.AuthService.Tests.csproj", "{A6F537E1-591B-4261-BA57-A1842C6882DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{430399DB-8A21-4652-A260-BB0E7460DC1A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B8FDCA94-334D-4421-920C-A61489843A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8FDCA94-334D-4421-920C-A61489843A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8FDCA94-334D-4421-920C-A61489843A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8FDCA94-334D-4421-920C-A61489843A13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7800A3A7-0D1F-4570-BFD1-FAE2D02D5CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7800A3A7-0D1F-4570-BFD1-FAE2D02D5CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7800A3A7-0D1F-4570-BFD1-FAE2D02D5CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7800A3A7-0D1F-4570-BFD1-FAE2D02D5CCE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1525B3DF-109E-47A6-A075-82B2FBB105EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1525B3DF-109E-47A6-A075-82B2FBB105EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1525B3DF-109E-47A6-A075-82B2FBB105EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1525B3DF-109E-47A6-A075-82B2FBB105EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{311BCF18-7E29-47F6-930F-4D6519135D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{311BCF18-7E29-47F6-930F-4D6519135D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{311BCF18-7E29-47F6-930F-4D6519135D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{311BCF18-7E29-47F6-930F-4D6519135D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A7B0DDF3-DFF9-4A2F-84C6-183A3D60EAE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7B0DDF3-DFF9-4A2F-84C6-183A3D60EAE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7B0DDF3-DFF9-4A2F-84C6-183A3D60EAE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,10 +27,6 @@ Global
 		{79FF0C02-71CC-4035-B7EB-584EC23DAB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79FF0C02-71CC-4035-B7EB-584EC23DAB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79FF0C02-71CC-4035-B7EB-584EC23DAB01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA07680C-8313-4653-B8CF-8C2FC9335CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA07680C-8313-4653-B8CF-8C2FC9335CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA07680C-8313-4653-B8CF-8C2FC9335CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA07680C-8313-4653-B8CF-8C2FC9335CCC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DCC72937-FB9A-4F28-BCFD-8FA2521FE569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCC72937-FB9A-4F28-BCFD-8FA2521FE569}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCC72937-FB9A-4F28-BCFD-8FA2521FE569}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,10 +39,6 @@ Global
 		{A6F537E1-591B-4261-BA57-A1842C6882DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6F537E1-591B-4261-BA57-A1842C6882DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6F537E1-591B-4261-BA57-A1842C6882DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{430399DB-8A21-4652-A260-BB0E7460DC1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
